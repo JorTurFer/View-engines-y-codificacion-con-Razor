@@ -21,7 +21,14 @@ namespace View_engines_y_codificacion_con_Razor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc()
+                .AddRazorOptions(opt =>
+                {
+                    opt.ViewLocationFormats.Clear();
+                    opt.ViewLocationFormats.Add("/Features/{1}/Views/{0}.cshtml");
+                    opt.ViewLocationFormats.Add("/Features/Shared/Views/{0}.cshtml");
+                    // Configurar nuevas ubicaciones aquí 
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
