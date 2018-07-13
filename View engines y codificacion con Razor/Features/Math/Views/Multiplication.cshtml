@@ -1,0 +1,22 @@
+﻿@model int;
+@{
+    ViewData["Title"] = "Multiplication";
+}
+
+<h2>Tabla del @Model</h2>
+
+@for (int i = 1; i <= 10; i++)
+{
+    string backcolor = @i % 2 == 0 ? "gray" : "white";
+    <span style="background-color:@backcolor">
+        @i <text>x</text> @Model <text>=</text>  @(i * Model)  <br />
+    </span>
+}
+
+@section footer
+    {
+    <div>
+        Multiplication table of @Model - &copy; @DateTime.Now.Year All rights reserved
+    </div>
+}
+

@@ -47,10 +47,11 @@ namespace View_engines_y_codificacion_con_Razor
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
-            {
+            {         
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+               
             });
         }
     }
